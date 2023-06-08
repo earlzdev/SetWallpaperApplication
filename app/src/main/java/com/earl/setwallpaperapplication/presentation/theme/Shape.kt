@@ -1,4 +1,4 @@
-package com.earl.setwallpaperapplication.ui.theme
+package com.earl.setwallpaperapplication.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
