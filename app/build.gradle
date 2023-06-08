@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -60,4 +61,39 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+
+    implementation Dependencies.core
+    implementation Dependencies.appCompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintLayout
+
+    // dagger2
+    implementation Dagger2.dagger
+    kapt Dagger2.daggerCompiler
+
+    // retrofit
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitGsonConverter
+    implementation Retrofit.retrofitCoroutineAdapter
+    implementation Retrofit.okHttpLoggingInterceptor
+
+    // navComponent
+    implementation NavigationComponent.navComponentFragment
+    implementation NavigationComponent.navComponentUi
+
+    // tests
+    implementation TestDependencies.junit
+    implementation TestDependencies.androidJunit
+    implementation TestDependencies.androidEspresso
+    testImplementation TestDependencies.mockito
+    testImplementation TestDependencies.ioMockito
+    testImplementation TestDependencies.kotlinMockito
+    testImplementation TestDependencies.coroutinesTests
+
+    // lifecycle
+    implementation LifecycleComponents.coroutines
+    implementation LifecycleComponents.viewModel
+    implementation LifecycleComponents.fragment
+    implementation LifecycleComponents.lifecycleRuntime
+    implementation LifecycleComponents.serialization
 }
